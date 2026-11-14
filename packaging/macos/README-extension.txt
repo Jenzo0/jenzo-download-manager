@@ -3,7 +3,7 @@ First start of Jenzo
 Jenzo isn't notarized by Apple (that needs a paid developer account), so macOS blocks it
 the first time. Allow it once: in Terminal run
 
-    xattr -dr com.apple.quarantine /Applications/Jenzo.app
+    xattr -dr com.apple.quarantine "/Applications/Jenzo Download Manager.app"
 
 or open Jenzo, then System Settings -> Privacy & Security -> "Open Anyway".
 

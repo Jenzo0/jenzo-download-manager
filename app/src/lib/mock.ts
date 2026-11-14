@@ -79,7 +79,16 @@ const queues: Queue[] = [
   { id: "night", name: "Night downloads", maxConcurrent: 2, speedLimit: 0, position: 1, builtin: false, running: false, schedule },
 ];
 
-type Seed = [string, string, number | null, Status, number, string, Partial<DownloadItem>?];
+interface MockTorrentInfo {
+  name: string;
+  infoHash: string;
+  totalSize: number;
+  files: { index: number; path: string; size: number }[];
+  trackers: string[];
+  selectedFiles?: number[];
+}
+type SeedExtra = Partial<DownloadItem> & { torrentInfo?: MockTorrentInfo };
+type Seed = [string, string, number | null, Status, number, string, SeedExtra?];
 const seeds: Seed[] = [
   ["ubuntu-26.04-desktop-amd64.iso", "https://releases.ubuntu.com/26.04/ubuntu-26.04-desktop-amd64.iso", 6.2 * GB, "downloading", 0.62, "compressed", { connections: 16 }],
   ["Blender-5.1-windows-x64.msi", "https://download.blender.org/release/Blender5.1/blender-5.1.0-windows-x64.msi", 412 * MB, "downloading", 0.31, "programs"],
@@ -156,8 +165,11 @@ const seeds: Seed[] = [
 ];
 
 const items: Record<string, DownloadItem> = {};
+const mockTorrentInfo: Record<string, MockTorrentInfo> = {};
 seeds.forEach(([fileName, url, size, status, frac, category, extra], idx) => {
   const id = `demo${idx}`;
+  const { torrentInfo, ...itemExtra } = extra ?? {};
+  if (torrentInfo) mockTorrentInfo[id] = torrentInfo;
   items[id] = {
     id,
     kind: "http",
@@ -185,7 +197,7 @@ seeds.forEach(([fileName, url, size, status, frac, category, extra], idx) => {
     mirrors: [],
     grabberProject: null,
     media: null,
-    ...extra,
+    ...itemExtra,
   };
 });
 
@@ -514,7 +526,7 @@ function details(id: string): ItemDetails | null {
   if (!item) return null;
   const segs = (segState[id] ??= makeSegments(item));
   const isTorrent = item.kind === "torrent";
-  const tInfo = (item as unknown as { torrentInfo?: { name: string; infoHash: string; totalSize: number; files: { index: number; path: string; size: number }[]; trackers: string[] } }).torrentInfo;
+  const tInfo = mockTorrentInfo[id];
   return {
     item,
     segments: segs,
