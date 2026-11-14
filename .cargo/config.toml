@@ -1,0 +1,3 @@
+# Redirect all Rust/Tauri build artifacts out of source/ into ../build/target
+[build]
+target-dir = "../build/target"

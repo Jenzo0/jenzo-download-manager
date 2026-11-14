@@ -1,0 +1,30 @@
+{
+  "https://jenzo.dev/": [
+    "b46c717603898585",
+    "2026-10-31"
+  ],
+  "https://jenzo.dev/browser-extension/": [
+    "eefa5db32e0db16a",
+    "2026-10-31"
+  ],
+  "https://jenzo.dev/hugging-face/": [
+    "86ae5807523c6e06",
+    "2026-10-30"
+  ],
+  "https://jenzo.dev/idm-alternative/": [
+    "b61aafbee0ca5b42",
+    "2026-10-31"
+  ],
+  "https://jenzo.dev/linux/": [
+    "f951d7bad29551db",
+    "2026-10-30"
+  ],
+  "https://jenzo.dev/mac/": [
+    "e7c135689d3c07ad",
+    "2026-10-31"
+  ],
+  "https://jenzo.dev/windows/": [
+    "5c609e00c39fbb27",
+    "2026-10-31"
+  ]
+}

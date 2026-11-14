@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & ideas
+    url: https://github.com/Jenzo0/jenzo-download-manager/discussions
+    about: Ask and discuss in GitHub Discussions.

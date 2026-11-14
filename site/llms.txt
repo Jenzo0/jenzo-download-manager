@@ -1,0 +1,22 @@
+# Jenzo Download Manager
+
+> Jenzo is a free, open-source (MIT) download manager and download accelerator for Windows 10/11, macOS 11+ (Apple Silicon and Intel) and 64-bit Linux (deb, rpm, AppImage). It splits each file across up to 32 connections (8 by default), resumes interrupted downloads after crashes or power cuts, catches downloads from Chrome, Edge, Brave, Opera, Vivaldi, Helium and Firefox through its browser extension, downloads video and audio from sites supported by yt-dlp, handles BitTorrent and magnet links, and downloads AI models from Hugging Face (GGUF, safetensors) checked by SHA-256. No ads, no account, no telemetry. Written in Rust with a Tauri UI, available in 9 languages.
+
+Jenzo is a clean-room project and is not affiliated with Internet Download Manager (IDM). It has not been benchmarked against IDM; its published benchmarks compare it with aria2c and curl.
+
+## Pages
+
+- [Home](https://jenzo.dev/): features, benchmarks, downloads, install guide and FAQ
+- [Jenzo for Windows](https://jenzo.dev/windows/): installer, MSI and portable version for Windows 10 and 11
+- [Jenzo for Mac](https://jenzo.dev/mac/): Apple Silicon and Intel builds, first-run steps
+- [Jenzo for Linux](https://jenzo.dev/linux/): deb, rpm and AppImage, browser integration on Linux
+- [Browser extension](https://jenzo.dev/browser-extension/): what the extension does, supported browsers, privacy
+- [An alternative to IDM](https://jenzo.dev/idm-alternative/): IDM workflows in Jenzo and how to switch
+- [Hugging Face models](https://jenzo.dev/hugging-face/): downloading GGUF and safetensors models
+
+## Project
+
+- [Source code (GitHub)](https://github.com/Jenzo0/jenzo-download-manager)
+- [Releases](https://github.com/Jenzo0/jenzo-download-manager/releases)
+- [Chrome Web Store extension](https://chromewebstore.google.com/detail/jenzo-download-manager/gkjhkpplhodplkeeefopddeaggdlcile)
+- [Benchmarks and method](https://github.com/Jenzo0/jenzo-download-manager/blob/main/docs/benchmarks.md)
